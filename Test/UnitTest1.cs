@@ -5,10 +5,11 @@ namespace Test
     [TestClass]
     public class RomanNumberTest
     {
-        [TestMethod]
+        //IT WAS 1st DZ
+        /*[TestMethod]
         public void ParseTest()
         {
-            var testCases = new Dictionary<string, int>()
+            /*var testCases = new Dictionary<string, int>()
             {
                 { "N", 0 },
                 { "I", 1 },
@@ -49,6 +50,7 @@ namespace Test
                     RomanNumber.DigitValue(testCase.Key),
                     $"{testCase.Key} -> {testCase.Value}");
             }
-        }
+        }#1#
+    */
     }
 }

@@ -15,26 +15,37 @@
       <change beforePath="$PROJECT_DIR$/App/bin/Debug/net8.0/App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/App/bin/Debug/net8.0/App.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/App.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/ref/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/ref/App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/refint/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/refint/App.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PM-213.sln" beforeDir="false" afterPath="$PROJECT_DIR$/PM-213.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.exe" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/TEST_LESSON2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/TEST_LESSON2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/TEST_LESSON2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/TEST_LESSON2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/ref/TEST_LESSON2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/ref/TEST_LESSON2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/refint/TEST_LESSON2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/refint/TEST_LESSON2.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Test/UnitTest1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/bin/Debug/net8.0/CoverletSourceRootsMapping_Test" beforeDir="false" afterPath="$PROJECT_DIR$/Test/bin/Debug/net8.0/CoverletSourceRootsMapping_Test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/bin/Debug/net8.0/Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test/bin/Debug/net8.0/Test.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/bin/Debug/net8.0/Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/bin/Debug/net8.0/Test.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Test/obj/Debug/net8.0/Test.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/obj/Debug/net8.0/ref/Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test/obj/Debug/net8.0/ref/Test.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/obj/Debug/net8.0/refint/Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test/obj/Debug/net8.0/refint/Test.dll" afterDir="false" />
     </list>
@@ -110,6 +121,7 @@
       <workItem from="1725298219233" duration="1484000" />
       <workItem from="1725349367363" duration="2958000" />
       <workItem from="1725391231941" duration="688000" />
+      <workItem from="1725443119141" duration="1440000" />
     </task>
     <task id="LOCAL-00001" summary="dz">
       <option name="closed" value="true" />
