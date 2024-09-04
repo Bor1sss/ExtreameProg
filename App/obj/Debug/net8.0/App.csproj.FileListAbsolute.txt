@@ -12,3 +12,4 @@ C:\Users\solt2\RiderProjects\PM-213\App\obj\Debug\net8.0\refint\App.dll
 C:\Users\solt2\RiderProjects\PM-213\App\obj\Debug\net8.0\App.pdb
 C:\Users\solt2\RiderProjects\PM-213\App\obj\Debug\net8.0\App.genruntimeconfig.cache
 C:\Users\solt2\RiderProjects\PM-213\App\obj\Debug\net8.0\ref\App.dll
+C:\Users\solt2\RiderProjects\PM-213\App\obj\Debug\net8.0\App.sourcelink.json

@@ -1,34 +1,44 @@
-﻿namespace App;
-
-public record RomanNumber(int Value)
+﻿namespace App
 {
-    private static readonly Dictionary<char, int> RomanDigitValues = new()
+    public record RomanNumber(int Value)
     {
-        { 'I', 1 },
-        { 'V', 5 },
-        { 'X', 10 },
-        { 'L', 50 },
-        { 'C', 100 },
-        { 'D', 500 },
-        { 'M', 1000 }
-    };
+        private readonly int _value = Value;
+        public int Value => _value;
 
-    public int Value { get; } = Value;
-
-    public static RomanNumber Parse(string input)
-    {
-        if (string.IsNullOrWhiteSpace(input))
+        public static RomanNumber Parse(string input)
         {
-            throw new ArgumentException("Input is empty");
+            if (string.IsNullOrWhiteSpace(input))
+                throw new ArgumentException("Input cannot be null or empty.");
+            int value = 0;
+            int prevDigit = 0;
+            foreach (char c in input.Reverse())
+            {
+                int digit = DigitValue(c.ToString());
+                value += digit >= prevDigit ? digit : -digit;
+                prevDigit = digit;
+            }
+            if (!IsValidRomanNumber(input))
+                throw new ArgumentException($"Invalid Roman number format: {input}");
+
+            return new(value);
         }
 
-        input = input.Trim().ToUpper();
-
-        if (input.Length != 1 || !RomanDigitValues.ContainsKey(input[0]))
+        public static int DigitValue(String digit) => digit switch
         {
-            throw new ArgumentException("Invalid Roman num.");
+            "N" => 0,
+            "I" => 1,
+            "V" => 5,
+            "X" => 10,
+            "L" => 50,
+            "C" => 100,
+            "D" => 500,
+            _ => 1000
+            // "M" => 1000,
+            // _ => throw new ArgumentException("Invalid Roman digit.")
+        };
+        private static bool IsValidRomanNumber(string input)
+        {
+            return !System.Text.RegularExpressions.Regex.IsMatch(input, "IIII|VV|XXXX|LL|CCCC|DD|MMMM");
         }
-
-        return new RomanNumber(RomanDigitValues[input[0]]);
     }
 }
