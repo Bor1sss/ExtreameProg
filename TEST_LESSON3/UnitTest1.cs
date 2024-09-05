@@ -123,7 +123,7 @@ public class RomanNumberTest
 
             ArgumentException ex = Assert.ThrowsException<ArgumentException>(
             () => RomanNumber.DigitalValue(invalidDigit),
-            $"ArgumentException erxpected for digit = '{invalidDigit}'"
+            $"ArgumentException expected for digit = '{invalidDigit}'"
              );
 
      
