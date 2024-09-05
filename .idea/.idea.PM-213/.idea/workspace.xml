@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5214a243-7e62-419a-9285-f757e2e5be15" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PM-213/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PM-213/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/RomanNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/RomanNumber.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/bin/Debug/net8.0/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/App/bin/Debug/net8.0/App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/bin/Debug/net8.0/App.exe" beforeDir="false" afterPath="$PROJECT_DIR$/App/bin/Debug/net8.0/App.exe" afterDir="false" />
@@ -21,6 +20,7 @@
       <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/ref/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/ref/App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/obj/Debug/net8.0/refint/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/App/obj/Debug/net8.0/refint/App.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_LESSON2/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/UnitTest1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.exe" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/bin/Debug/net8.0/App.pdb" afterDir="false" />
@@ -34,7 +34,6 @@
       <change beforePath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/TEST_LESSON2.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/ref/TEST_LESSON2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/ref/TEST_LESSON2.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/refint/TEST_LESSON2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TEST_LESSON2/obj/Debug/net8.0/refint/TEST_LESSON2.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Test/UnitTest1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/bin/Debug/net8.0/App.pdb" afterDir="false" />
