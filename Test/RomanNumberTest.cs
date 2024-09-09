@@ -113,7 +113,7 @@ namespace Test
             Dictionary<string, (char, int)[]> exTestCases3 = new()
             {
               
-                 // Invalid repeated symbols (VV, LL, LC, VX, ...)
+             
                 { "XVV", new[] { ('V', 2) }},
                 { "LL", new[] { ('L', 1) }},
                 { "LC", new[] { ('C', 1) }},
