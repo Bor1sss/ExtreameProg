@@ -1,10 +1,10 @@
 ﻿using System.Text;
 
-namespace App
-{
-    public record RomanNumber(int Value)
+namespace _01_RomanParser;
+
+ public record RomanNumber(int Value)
     {
-        private readonly int _value = Value; 
+        private readonly int _value = Value;
         public int Value => _value;
 
 
@@ -65,13 +65,7 @@ namespace App
 
         public override string? ToString()
         {
-            //3343->MMMCCCXLIII
-            // MMM
-            // D (500) X
-            // CD (400) X
-            // CCC
-            // LX
-            // III
+       
             if(_value == 0 ) return "N";
             Dictionary<int, string> parts = new ()
             {
@@ -106,5 +100,3 @@ namespace App
             return sb.ToString();
         }
     }
-}
-
