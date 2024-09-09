@@ -11,7 +11,7 @@ namespace App
         public static RomanNumber Parse(String input)
         {
             int value = 0;
-            int prevDigit = 0;  // TODO: rename to  ~rightDigit
+            int prevDigit = 0; 
             int pos = input.Length;
             List<String> errors = new();
             foreach (char c in input.Reverse())
