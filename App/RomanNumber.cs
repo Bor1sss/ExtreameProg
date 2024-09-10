@@ -4,7 +4,7 @@ namespace _01_RomanParser;
 
 public record RomanNumber(int Value)
 {
-    private readonly int _value = Value
+    private readonly int _value = Value;
     public int Value { get => _value; init => _value = value; }
 
     public static RomanNumber Parse(String input)
