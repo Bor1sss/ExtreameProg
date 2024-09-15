@@ -34,7 +34,7 @@
 
         private static void _CheckSubs(string input)
         {
-            // IXIV XCXL  -- одна цифра може відніматись тільки один раз
+          
 
             HashSet<char> subs = new();
             for (int i = 0; i < input.Length - 1; ++i)
@@ -91,8 +91,8 @@
                 int leftDigit = DigitValue(input[i].ToString());
                 if (leftDigit != 0 &&
                     leftDigit < rightDigit &&
-                    (rightDigit / leftDigit > 10 ||  // IC IM
-                        (leftDigit == 5 || leftDigit == 50 || leftDigit == 500)   // VX
+                    (rightDigit / leftDigit > 10 || 
+                        (leftDigit == 5 || leftDigit == 50 || leftDigit == 500)  
                     ))
                 {
                     throw new FormatException(

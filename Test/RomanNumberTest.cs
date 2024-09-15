@@ -26,7 +26,7 @@ namespace Test
         [TestMethod]
         public void ToStringTest()
         {
-            Dictionary<int, String> testCases = new() {   // Append / Concat
+            Dictionary<int, String> testCases = new() {  
             { 2, "II" },
             { 3343, "MMMCCCXLIII" },
             { 4, "IV" },
@@ -54,22 +54,7 @@ namespace Test
             }
         }
 
-        //[TestMethod]
-        //public void PlusTest()
-        //{
-        //    RomanNumber rn1 = new(1);
-        //    RomanNumber rn2 = new(2);
-        //    var rn3 = rn1.Plus(rn2);
-        //    Assert.IsNotNull(rn3);
-        //    Assert.IsInstanceOfType(rn3, typeof(RomanNumber), 
-        //        "Plus result mast have RomanNumber type");
-        //    Assert.AreNotSame(rn3, rn1, 
-        //        "Plus result is new instance, neither (v)first, nor second arg");
-        //    Assert.AreNotSame(rn3, rn2, 
-        //        "Plus result is new instance, neither first, nor (v)second arg");
-        //    Assert.AreEqual(rn1.Value + rn2.Value, rn3.Value, 
-        //        "Plus arithmetic");
-        //}
+     
     }
 
 }

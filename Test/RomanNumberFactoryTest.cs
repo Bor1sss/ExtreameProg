@@ -46,7 +46,7 @@ public class RomanNumberFactoryTest
         MethodInfo? m1Info = rnType.GetMethod("_CheckPairs",
             BindingFlags.NonPublic | BindingFlags.Static);
 
-        // Assert Not Throws
+        
         m1Info?.Invoke(null, ["IX"]);
         
         var ex = Assert.ThrowsException<TargetInvocationException>(
@@ -66,7 +66,7 @@ public class RomanNumberFactoryTest
         MethodInfo? m1Info = rnType.GetMethod("_CheckFormat",
             BindingFlags.NonPublic | BindingFlags.Static);
 
-        // Assert Not Throws
+       
         m1Info?.Invoke(null, ["IX"]);
 
         var ex = Assert.ThrowsException<TargetInvocationException>(
@@ -86,7 +86,7 @@ public class RomanNumberFactoryTest
         MethodInfo? m1Info = rnType.GetMethod("_CheckValidity",
             BindingFlags.NonPublic | BindingFlags.Static);
 
-        // Assert Not Throws
+       
         m1Info?.Invoke(null, ["IX"]);
 
         String[] testCases = ["IXIX", "IXX", "IVIV", "XCC", "IXIV", "XCXL", "CMCD"];
@@ -112,7 +112,7 @@ public class RomanNumberFactoryTest
             { "I",    1 },
             { "II",   2 },
             { "III",  3 },
-            { "IIII", 4 },   // öèì òåñòîì ìè äîçâîëÿºìî íåîïòèìàëüíó ôîðìó ÷èñëà
+            { "IIII", 4 },   
             { "IV",   4 },
             { "VI",   6 },
             { "VII",  7 },
@@ -188,7 +188,7 @@ public class RomanNumberFactoryTest
         {
             "IXC", "IIX", "VIX",
             "CIIX", "IIIX", "VIIX",
-            "VIXC", "IVIX", "CVIIX",  // XIX+ CIX+ IIX- VIX-
+            "VIXC", "IVIX", "CVIIX", 
             "CIXC", "IXCM", "IXXC",
         };
         foreach (var testCase in exTestCases3)
@@ -197,13 +197,7 @@ public class RomanNumberFactoryTest
                 () => RomanNumberFactory.Parse(testCase),
                 $"Parse '{testCase}' must throw FormatException"
             );
-            //Assert.IsTrue(
-            //         ex.Message.Contains(nameof(RomanNumber)) &&
-            //         ex.Message.Contains(nameof(RomanNumberFactory.Parse)) &&
-            //         ex.Message.Contains(
-            //             $"invalid sequence: more than 1 less digit before '{testCase[^1]}'"),
-            //         $"ex.Message must contain info about origin, cause and data. {ex.Message}"
-            //     );
+    
         }
 
 
@@ -225,12 +219,7 @@ public class RomanNumberFactoryTest
         }
 
 
-        /*
-         Скласти тести (вислови) на проходження групи exTestCases4,
-         а також на вміст повідомлень про винятки.
-         Реалізувати (модифікувати) алгоритм парсера для проходження
-         тестів.
-         */
+       
     }
 
     [TestMethod]
