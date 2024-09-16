@@ -193,7 +193,7 @@ public class RomanNumberFactoryTest
                 ex.Message.Contains(testCase.ExceptionMessageParts!.First()),
                 "FormatException must contain data about mis-ordered symbols and its position"
             );
-        }
+        } 
 
         TestCase[] exTestCases4 = {
         new() { Source = "IXIX", ExceptionMessageParts = new[] { "Invalid" }, ExceptionType = formatExceptionType },
