@@ -26,7 +26,7 @@ namespace Test
         [TestMethod]
         public void ToStringTest()
         {
-            Dictionary<int, String> testCases = new() {  
+            Dictionary<int, String> testCases = new() {   
             { 2, "II" },
             { 3343, "MMMCCCXLIII" },
             { 4, "IV" },
@@ -53,8 +53,7 @@ namespace Test
                 );
             }
         }
-
-     
+        
     }
 
 }
