@@ -34,7 +34,7 @@
 
         private static void _CheckSubs(string input)
         {
-            
+            // IXIV XCXL  -- одна цифра може відніматись тільки один раз
 
             HashSet<char> subs = new();
             for (int i = 0; i < input.Length - 1; ++i)
@@ -113,7 +113,7 @@
                 catch
                 {
                     throw new FormatException(
-                        $"Invalid symbol '{c}' in position {pos}");
+                        $"Parse('{input}') error: Invalid symbol '{c}' in position {pos}");
                 }
                 pos += 1;
             }
