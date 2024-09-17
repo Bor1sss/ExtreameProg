@@ -1,67 +1,151 @@
-﻿namespace _01_RomanParser.tests;
-
+﻿using System.Reflection;
+namespace _01_RomanParser.tests;
 [TestClass]
 public class RomanNumberTest
 {
+    private readonly Dictionary<String, int> _digitValues = new()
+    {
+        { "N", 0    },
+        { "I", 1    },
+        { "V", 5    },
+        { "X", 10   },
+        { "L", 50   },
+        { "C", 100  },
+        { "D", 500  },
+        { "M", 1000 },
+    };
+    [TestMethod]
+    public void _CheckSymbolsTest()
+    {
+        Type? rnType = typeof(RomanNumber);
+        MethodInfo? m1Info = rnType.GetMethod("_CheckSymbols", 
+            BindingFlags.NonPublic | BindingFlags.Static);
+        // Assert Not Throws
+        m1Info?.Invoke(null, ["IX"]);
+
+        var ex = Assert.ThrowsException<TargetInvocationException>(
+        () => m1Info?.Invoke(null, ["IW"]),
+            $"_CheckSymbols 'IW' must throw FormatException"
+        );
+        Assert.IsInstanceOfType(
+            ex.InnerException,
+            typeof(FormatException),
+            "FormatException from InnerException"
+        );
+    }
+    [TestMethod]
+    public void _CheckPairsTest()
+    {
+        Type? rnType = typeof(RomanNumber);
+        MethodInfo? m1Info = rnType.GetMethod("_CheckPairs",
+            BindingFlags.NonPublic | BindingFlags.Static);
+        // Assert Not Throws
+        m1Info?.Invoke(null, ["IX"]);
+
+        var ex = Assert.ThrowsException<TargetInvocationException>(
+        () => m1Info?.Invoke(null, ["IM"]),
+            $"_CheckPairs 'IM' must throw FormatException"
+        );
+        Assert.IsInstanceOfType(
+            ex.InnerException,
+            typeof(FormatException),
+            "FormatException from InnerException"
+        );
+    }
+    [TestMethod]
+    public void _CheckFormatTest()
+    {
+        Type? rnType = typeof(RomanNumber);
+        MethodInfo? m1Info = rnType.GetMethod("_CheckFormat",
+            BindingFlags.NonPublic | BindingFlags.Static);
+        // Assert Not Throws
+        m1Info?.Invoke(null, ["IX"]);
+
+        var ex = Assert.ThrowsException<TargetInvocationException>(
+        () => m1Info?.Invoke(null, ["IIX"]),
+            $"_CheckFormat 'IIX' must throw FormatException"
+        );
+        Assert.IsInstanceOfType(
+            ex.InnerException,
+            typeof(FormatException),
+            "_CheckFormat: FormatException from InnerException"
+        );
+    }
+    [TestMethod]
+    public void _CheckValidityTest()
+    {
+        Type? rnType = typeof(RomanNumber);
+        MethodInfo? m1Info = rnType.GetMethod("_CheckValidity",
+            BindingFlags.NonPublic | BindingFlags.Static);
+        // Assert Not Throws
+        m1Info?.Invoke(null, ["IX"]);
+        
+        string[] testCases = ["IXIX", "IXX", "IVIV", "XCC", "IXIV", "XCXL", "CMCD"];
+        foreach (var testCase in testCases)
+        {
+            var ex = Assert.ThrowsException<TargetInvocationException>(
+                () => m1Info?.Invoke(null, [testCase]),
+                "_CheckValidity '{testCase}' must throw FormatException"
+            );
+            Assert.IsInstanceOfType<FormatException>(
+                ex.InnerException,
+                "_CheckValidity: FormatException from InnerException"
+            );
+        }
+    }
     [TestMethod]
     public void ParseTest()
     {
-        var testCases = new Dictionary<string, int>()
-    {
-        { "N",      0 },
-        { "I",      1 },
-        { "II",     2 },
-        { "III",    3 },
-        { "IV",     4 },
-        { "V",      5 },
-        { "VI",     6 },
-        { "VII",    7 },
-        { "VIII",   8 },
-        { "D",      500 },
-        { "CM",     900 },
-        { "M",      1000 },
-        { "MC",     1100 },
-        { "MCM",    1900 },
-        { "MM",     2000 },
-    };
-
+        Dictionary<String, int> testCases = new()
+        {
+            { "N",    0 },
+            { "I",    1 },
+            { "II",   2 },
+            { "III",  3 },
+            { "IV",   4 },
+            { "VI",   6 },
+            { "VII",  7 },
+            { "VIII", 8 },
+            { "IX",   9 },
+            { "D",    500 },
+            { "M",    1000 },
+            { "CM",   900 },
+            { "MC",   1100 },
+            { "MCM",  1900 },
+            { "MM",   2000 },
+        };
         foreach (var testCase in testCases)
         {
             RomanNumber rn = RomanNumber.Parse(testCase.Key);
             Assert.IsNotNull(rn);
-            Assert.AreEqual(testCase.Value
-                ,
-                rn.Value,
-                $"{testCase.Key} parsing failed. Expected {testCase.Value}, got {rn.Value}."
+            Assert.AreEqual(
+                testCase.Value, 
+                rn.Value, 
+                $"{testCase.Key} -> {testCase.Value}"
             );
         }
-
-        Dictionary<string, (char, int)[]> exTestCases = new()
+        Dictionary<String, Object[]> exTestCases = new()
         {
-            {"W", new[] {('W', 0)}},
-            {"Q", new[] {('Q', 0)}},
-            {"s", new[] {('s', 0)}},
-            {"Xd", new[] {('d', 1)}},
-            {"SWXF", new[] {('S', 0), ('W', 1), ('F', 3)}},
-            {"XXFX", new[] {('F', 2)}},
-            {"VVVFX", new[] {('F', 3)}},
-            {"IVF", new[] {('F', 2)}},
+            { "W", ['W', 0] },
+            { "Q", ['Q', 0] },
+            { "s", ['s', 0] },
+            { "sX", ['s', 0] },
+            { "Xd", ['d', 1] },
         };
-
         foreach (var testCase in exTestCases)
         {
             var ex = Assert.ThrowsException<FormatException>(
                 () => RomanNumber.Parse(testCase.Key),
-                $"{nameof(FormatException)} Parse '{testCase.Key}' must throw");
-
-            foreach (var (symbol, position) in testCase.Value)
-            {
-                Assert.IsTrue(ex.Message.Contains($"Invalid symbol '{symbol}' in position {position}"),
-                    $"{nameof(FormatException)} must contain data about symbol '{symbol}' at position {position}. " +
-                    $"TestCase: '{testCase.Key}', ex.Message: '{ex.Message}'");
-            }
+                $"Parse '{testCase.Key}' must throw FormatException"
+            );
+            Assert.IsTrue(
+                ex.Message.Contains(
+                    $"Invalid symbol '{testCase.Value[0]}' in position {testCase.Value[1]}"
+                ),
+                "FormatException must contain data about symbol and its position"
+                + $"testCase: '{testCase.Key}', ex.Message: '{ex.Message}'"
+            );
         }
-
         Dictionary<String, Object[]> exTestCases2 = new()
         {
             { "IM",  ['I', 'M', 0] },
@@ -69,10 +153,10 @@ public class RomanNumberTest
             { "IMX", ['I', 'M', 0] },
             { "XMD", ['X', 'M', 0] },
             { "XID", ['I', 'D', 1] },
-            { "ID", ['I', 'D', 0] },
-            { "XM", ['X', 'M', 0] },
-
-
+            { "VX",  ['V', 'X', 0] },
+            { "VL",  ['V', 'L', 0] },
+            { "LC",  ['L', 'C', 0] },
+            { "DM",  ['D', 'M', 0] },
         };
         foreach (var testCase in exTestCases2)
         {
@@ -88,115 +172,290 @@ public class RomanNumberTest
                 + $"testCase: '{testCase.Key}', ex.Message: '{ex.Message}'"
             );
         }
-    }
 
-    Dictionary<int, String> _digitValues = new ();
+        String[] exTestCases3 =
+        [
+            "IXC", "IIX", "VIX",
+            "CIIX", "IIIX", "VIIX",
+            "VIXC", "IVIX", "CVIIX",
+            "CIXC", "IXCM", "IXXC"
+        ];
+        foreach (var testCase in exTestCases3)
+        {
+            var ex = Assert.ThrowsException<FormatException>(
+                () => RomanNumber.Parse(testCase),
+                $"Parse '{testCase}' must throw FormatException"
+            );
+            
+        }
+    }
+   
 
     [TestMethod]
-    public void DigitalValueTest()
-    {
-        var romanToInt = new Dictionary<string, int>()
-    {
-        { "N", 0 },
-        { "I", 1 },
-        { "V", 5 },
-        { "X", 10 },
-        { "L", 50 },
-        { "C", 100 },
-        { "D", 500 },
-        { "M", 1000 },
-    };
-
-        foreach (var kvp in romanToInt)
+    public void DigitValueTest()
+    {           
+        foreach (var testCase in _digitValues)
         {
-
             Assert.AreEqual(
-                kvp.Value,
-                RomanNumber.DigitalValue(kvp.Key),
-                $"{kvp.Value} parsing failed. Expected {kvp}, got {kvp.Value}."
+                testCase.Value, 
+                RomanNumber.DigitValue(testCase.Key),
+                $"{testCase.Key} -> {testCase.Value}"
             );
         }
-
-
-        var random = new Random();
-        for (int i = 0; i < 100; i++)
+        Random random = new();
+        for (int i = 0; i < 100; ++i)
         {
-            String invalidDigit = ((char)random.Next(256)).ToString();
-
-
-            if (romanToInt.ContainsKey(invalidDigit))
+            String invalidDigit = ((char) random.Next(256)).ToString();
+            if(_digitValues.ContainsKey(invalidDigit))
             {
-                i--;
+                --i;
                 continue;
             }
-
-
-            ArgumentException ex = Assert.ThrowsException<ArgumentException>(
-            () => RomanNumber.DigitalValue(invalidDigit),
-            $"ArgumentException erxpected for digit = '{invalidDigit}'"
-             );
+            ArgumentException ex =
+                Assert.ThrowsException<ArgumentException>(
+                    () => RomanNumber.DigitValue(invalidDigit),
+                    $"ArgumentException expected for digit = '{invalidDigit}'"
+                );
+         
 
             Assert.IsFalse(
                 String.IsNullOrEmpty(ex.Message),
                 "ArgumentException must have a message"
-                );
+            );
             Assert.IsTrue(
                 ex.Message.Contains($"'digit' has invalid value '{invalidDigit}'"),
-                $"ArgumentException message must contain <'digit' has invalid value '{invalidDigit}'>"
-                );
+                "ArgumentException message must contain <'digit' has invalid value ''>"
+            );
             Assert.IsTrue(
                 ex.Message.Contains(nameof(RomanNumber)) &&
-                ex.Message.Contains(nameof(RomanNumber.DigitalValue)),
-                $"ArgumentException message must contain '{nameof(RomanNumber)}' and '{nameof(RomanNumber.DigitalValue)}'"
-                );
+                ex.Message.Contains(nameof(RomanNumber.DigitValue)),
+                $"ArgumentException message must contain '{nameof(RomanNumber)}' and '{nameof(RomanNumber.DigitValue)}' "
+            );
         }
     }
-
     [TestMethod]
     public void ToStringTest()
     {
-        Dictionary<int, string> testCases = new()
-        {
-            { 1, "I" },
-            { 2, "II"},
+        Dictionary<int, String> testCases = new() {
+            { 2, "II" },
             { 3343, "MMMCCCXLIII" },
             { 4, "IV" },
             { 44, "XLIV" },
             { 9, "IX" },
             { 90, "XC" },
             { 1400, "MCD" },
-            { 900, "CM" },
-            { 990, "CMXC" },
+            { 999, "CMXCIX" },  
+            { 444, "CDXLIV" },
+            { 990, "CMXC" }, 
         };
-        _digitValues.Keys.ToList().ForEach(k => testCases.Add(k, _digitValues[k]));
+
+        _digitValues.Keys.ToList().ForEach(k => testCases.Add(_digitValues[k], k));
+        
         foreach (var testCase in testCases)
         {
             Assert.AreEqual(
-                new RomanNumber(testCase.Key).ToString(),
                 testCase.Value,
-                $"ToString({testCase.Key})--> {testCase.Value}");
+                new RomanNumber(testCase.Key).ToString(),
+                $"ToString({testCase.Key}) --> {testCase.Value}"
+            );
         }
     }
-
-
     [TestMethod]
     public void PlusTest()
     {
         RomanNumber rn1 = new(1);
         RomanNumber rn2 = new(2);
-        RomanNumber rn3 = rn1.Plus(rn2);
+        var rn3 = rn1.Plus(rn2);
         Assert.IsNotNull(rn3);
-        Assert.IsInstanceOfType(rn3, typeof(RomanNumber),
-            "Plus result must have RomanNumber type");
-        Assert.AreNotSame(rn3, rn1, "Plus result is new instance, neither (v)first, nor second arg");
-        Assert.AreNotSame(rn3, rn2, "Plus result is new instance, neither first, nor (v)second arg");
-        Assert.AreEqual(rn1.Value + rn2.Value, rn3.Value, "Plus arithmetic");
-        RomanNumber rn12 = RomanNumber.Parse("IV");
-        String rn22 = "VI";
-        RomanNumber rn32 = rn12.Plus(rn22);
+        Assert.IsInstanceOfType(rn3, typeof(RomanNumber), 
+            "Plus result mast have RomanNumber type");
+        Assert.AreNotSame(rn3, rn1, 
+            "Plus result is new instance, neither (v)first, nor second arg");
+        Assert.AreNotSame(rn3, rn2, 
+            "Plus result is new instance, neither first, nor (v)second arg");
+        Assert.AreEqual(rn1.Value + rn2.Value, rn3.Value, 
+            "Plus arithmetic");
+    }
 
-        Assert.IsNotNull(rn32);
-        Assert.AreNotSame(rn32, rn12, "String result is new instance");
-        Assert.AreEqual("X", rn32.ToString(), "Plus X arithmetic");
+
+    private static MethodInfo? GetMethod(string methodName)
+    {
+        Type? rnType = typeof(RomanNumber);
+        return rnType.GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Static);
+    }
+
+    [TestMethod]
+    public void CheckSymbols_ValidSymbols_DoesNotThrow()
+    {
+        // Arrange
+        var validInputs = new[]
+        {
+            "I", "V", "X", "L", "C", "D", "M", "IX", "XL", "XC", "CD", "CM"
+        };
+        MethodInfo? method = GetMethod("_CheckSymbols");
+
+        // Act & Assert
+        foreach (var input in validInputs)
+        {
+            try
+            {
+                method?.Invoke(null, [input]);
+            }
+            catch (TargetInvocationException ex)
+            {
+                Assert.Fail($"_CheckSymbols should not throw for valid input '{input}'. Exception: {ex.InnerException?.Message}");
+            }
+        }
+    }
+
+    [TestMethod]
+    public void CheckSymbols_InvalidSymbols_ThrowsFormatException()
+    {
+        // Arrange
+        var invalidInputs = new[]
+        {
+            "A", "G", "Z", "IK", "C5", "M1"
+        };
+        MethodInfo? method = GetMethod("_CheckSymbols");
+
+        // Act & Assert
+        foreach (var input in invalidInputs)
+        {
+            var ex = Assert.ThrowsException<TargetInvocationException>(() => 
+                method?.Invoke(null, [input]));
+            Assert.IsTrue(ex.InnerException is FormatException);
+            Assert.IsTrue(ex.InnerException?.Message.Contains("Invalid symbol"));
+        }
+    }
+
+    [TestMethod]
+    public void CheckPairs_ValidPairs_DoesNotThrow()
+    {
+        // Arrange
+        var validInputs = new[]
+        {
+            "IV", "IX", "XL", "XC", "CD", "CM"
+        };
+        MethodInfo? method = GetMethod("_CheckPairs");
+
+        // Act & Assert
+        foreach (var input in validInputs)
+        {
+            try
+            {
+                method?.Invoke(null, [input]);
+            }
+            catch (TargetInvocationException ex)
+            {
+                Assert.Fail($"_CheckPairs should not throw for valid input '{input}'. Exception: {ex.InnerException?.Message}");
+            }
+        }
+    }
+
+    [TestMethod]
+    public void CheckPairs_InvalidPairs_ThrowsFormatException()
+    {
+        // Arrange
+        var invalidInputs = new[]
+        {
+            "IC", "IM", "VX", "VL", "VC", "VM", "XD", "XM"
+        };
+        MethodInfo? method = GetMethod("_CheckPairs");
+
+        // Act & Assert
+        foreach (var input in invalidInputs)
+        {
+            var ex = Assert.ThrowsException<TargetInvocationException>(() => 
+                method?.Invoke(null, [input]));
+            Assert.IsTrue(ex.InnerException is FormatException);
+            Assert.IsTrue(ex.InnerException?.Message.Contains("Invalid order"));
+        }
+    }
+
+    [TestMethod]
+    public void CheckFormat_ValidFormats_DoesNotThrow()
+    {
+        // Arrange
+        var validInputs = new[]
+        {
+            "I", "IX", "XL", "XC", "CD", "CM", "MCMXC"
+        };
+        MethodInfo? method = GetMethod("_CheckFormat");
+
+        // Act & Assert
+        foreach (var input in validInputs)
+        {
+            try
+            {
+                method?.Invoke(null, [input]);
+            }
+            catch (TargetInvocationException ex)
+            {
+                Assert.Fail($"_CheckFormat should not throw for valid input '{input}'. Exception: {ex.InnerException?.Message}");
+            }
+        }
+    }
+
+    [TestMethod]
+    public void CheckFormat_InvalidFormats_ThrowsFormatException()
+    {
+        // Arrange
+        var invalidInputs = new[]
+        {
+            "IIX", "IXIX", "IXX", "VIX", "LXL", "DCD", "MMMM"
+        };
+        MethodInfo? method = GetMethod("_CheckFormat");
+
+        // Act & Assert
+        foreach (var input in invalidInputs)
+        {
+            var ex = Assert.ThrowsException<TargetInvocationException>(() => 
+                method?.Invoke(null, new object[] { input }));
+            Assert.IsTrue(ex.InnerException is FormatException, $"Expected FormatException for input '{input}'");
+            Assert.IsTrue(ex.InnerException?.Message.Contains(input), $"Expected message to contain '{input}' for input '{input}'");
+        }
+    }
+
+    [TestMethod]
+    public void CheckSubs_ValidSubs_DoesNotThrow()
+    {
+        // Arrange
+        var validInputs = new[]
+        {
+            "IX", "XC", "CD", "MCM", "XLV"
+        };
+        MethodInfo? method = GetMethod("_CheckSubs");
+
+        // Act & Assert
+        foreach (var input in validInputs)
+        {
+            try
+            {
+                method?.Invoke(null, [input]);
+            }
+            catch (TargetInvocationException ex)
+            {
+                Assert.Fail($"_CheckSubs should not throw for valid input '{input}'. Exception: {ex.InnerException?.Message}");
+            }
+        }
+    }
+
+    [TestMethod]
+    public void CheckSubs_InvalidSubs_ThrowsFormatException()
+    {
+        // Arrange
+        var invalidInputs = new[]
+        {
+            "IXIV", "XCXL", "CDCD", "IM", "XM"
+        };
+        MethodInfo? method = GetMethod("_CheckSubs");
+
+        // Act & Assert
+        foreach (var input in invalidInputs)
+        {
+            var ex = Assert.ThrowsException<TargetInvocationException>(() => 
+                method?.Invoke(null, [input]));
+            Assert.IsTrue(ex.InnerException is FormatException, $"Expected FormatException for input '{input}'");
+        }
     }
 }
